@@ -1,0 +1,10 @@
+---
+- name: "Install Nginx, docker and oneill."
+  hosts: labs-server-host
+  user: ubuntu
+  sudo: yes
+
+  roles:
+    - nginx
+    - docker
+    - oneill

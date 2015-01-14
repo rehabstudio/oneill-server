@@ -1,0 +1,19 @@
+---
+- name: Add Docker repository key
+  apt_key:
+    id: "A88D21E9"
+    url: "http://get.docker.io/gpg"
+    state: present
+
+- name: Add Docker repository and update apt cache
+  apt_repository:
+    repo: "deb http://get.docker.io/ubuntu docker main"
+    update_cache: yes
+    state: present
+
+- name: Install (or update) docker package
+  apt:
+    name: "lxc-docker"
+    state: latest
+    update_cache: yes
+    cache_valid_time: 600

@@ -1,0 +1,6 @@
+hosts
+roles/oneill/files/config.yaml
+roles/oneill/files/definitions_repo.pem
+roles/oneill/files/definitions_repo.pub
+roles/nginx/files/labs-server.crt
+roles/nginx/files/labs-server.pem
