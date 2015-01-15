@@ -2,11 +2,14 @@
 - name: download oneill
   get_url: url=http://storage.googleapis.com/rehab-labs-oneill-releases/stable/oneill dest=/usr/local/bin/oneill mode=0755 force=yes
 
+- name: Creates directory
+  file: path=/etc/oneill state=directory
+
 - name: Upload oneill config file
   copy: src=config.yaml dest=/etc/oneill/config.yaml mode=0644
 
 - name: Upload deploy key for definitions repo
-  copy: src=definitions_repo.pem dest=/root/.ssh/id_rsa
+  copy: src=definitions_repo.pem dest=/root/.ssh/id_rsa mode=0600
 
 - git:
     accept_hostkey: true
