@@ -8,3 +8,4 @@
     - nginx
     - docker
     - oneill
+    - fluentd
