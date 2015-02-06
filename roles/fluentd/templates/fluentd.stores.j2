@@ -1,4 +1,4 @@
-{% set stores = ["docker", "syslog", "auth.log", "nginx", "oneill"] %}
+{% set stores = ["docker", "syslog", "auth.log", "nginx", "oneill", "apt-security-updates"] %}
 
 {% for store in stores %}
 <match {{ store }}.**>

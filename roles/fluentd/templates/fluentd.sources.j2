@@ -43,3 +43,12 @@
   time_key time
   time_format %Y-%m-%dT%H:%M:%S%z
 </source>
+
+
+<source>
+  type tail
+  path /var/log/apt-security-updates
+  pos_file /var/log/td-agent/apt-security-updates.pos
+  tag apt-security-updates
+  format none
+</source>

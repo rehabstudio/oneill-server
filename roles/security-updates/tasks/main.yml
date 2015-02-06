@@ -1,0 +1,8 @@
+---
+
+
+- name: Upload cron definition for automatic security updates
+  copy: src=updates.cron dest=/etc/cron.weekly/apt-security-updates mode=0755
+
+- name: Upload logrotate.d config for automatic security updates
+  copy: src=logrotate.conf dest=/etc/logrotate.d/apt-security-updates mode=0755
