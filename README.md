@@ -11,6 +11,8 @@ Engine.
 - A Google Cloud project set up with billing enabled.
 - Ansible must be installed on your local machine (as new a version as
   possible ideally, but at least >=1.8).
+- A writable cloud storage bucket and interoperable access key must be created
+  for storing logs.
 - The Google Cloud SDK should be installed on your local machine.
 - A valid SSL certificate/key for the domain you're planning to use.
 - A valid `oneill` configuration file.
