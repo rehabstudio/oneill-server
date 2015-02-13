@@ -8,15 +8,7 @@
 - name: Upload oneill config file
   copy: src=config.yaml dest=/etc/oneill/config.yaml mode=0644
 
-- name: Upload deploy key for definitions repo
-  copy: src=definitions_repo.pem dest=/root/.ssh/id_rsa mode=0600
+- name: Upload oneill container definitions
+  copy: src=definitions.yaml dest=/etc/oneill/definitions.yaml mode=0644
 
-- git:
-    accept_hostkey: true
-    repo: "{{ definitions_repo }}"
-    dest: "/etc/oneill/definitions"
-
-# Update site definitions every few minutes
-- cron: name="get definitions" minute="*/3" job="cd /etc/oneill/definitions; git pull"
-# Run oneill container manager every 5 minutes
-- cron: name="oneill" minute="*/5" job="run-one /usr/local/bin/oneill >> /var/log/oneill.log 2>&1"
+- cron: name="oneill" minute="*/15" job="run-one /usr/local/bin/oneill >> /var/log/oneill.log 2>&1"
