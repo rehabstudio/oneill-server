@@ -1,0 +1,12 @@
+# the cloation from which oneill will load any container definitions
+definitions_uri: "file:///etc/oneill/definitions.yaml"
+
+# configure logging
+log_format: json
+log_level: debug
+
+# example custom credentials for a private registry
+registry_credentials:
+    registry.example.com:
+        username: myusername
+        password: mypassword

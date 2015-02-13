@@ -1,12 +1,9 @@
 ---
-- name: "Install Nginx, docker and oneill."
-  hosts: labs-server-host
-  user: ubuntu
-  sudo: yes
+- name: "Install docker and oneill."
+  hosts: oneill-server-host
+  remote_user: root
 
   roles:
-    - nginx
     - docker
     - oneill
-    - fluentd
     - security-updates
