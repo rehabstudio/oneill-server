@@ -21,6 +21,17 @@ has some bits that are specific to an Ubuntu server like automatic security
 updates by default.
 
 
+## Logging
+
+This repo contains a basic fluentd setup that will aggregate a configured set
+of system log files, along with the output of any running containers and store
+them on Google Cloud Storage. This configuration is simple to disable by
+removing the role from `site.yaml` if you don't need it.
+
+If you're going to use the configured logging setup, you'll need to tweak the
+configuration values as seen in `hosts.example` and copy into `hosts`.
+
+
 ## Provisioning
 
 Once your new instance is running we can use ansible to provision all the
