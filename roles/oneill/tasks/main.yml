@@ -11,4 +11,4 @@
 - name: Upload oneill container definitions
   copy: src=definitions.yaml dest=/etc/oneill/definitions.yaml mode=0644
 
-- cron: name="oneill" minute="*/15" job="run-one /usr/local/bin/oneill >> /var/log/oneill.log 2>&1"
+- cron: name="oneill" minute="*/2" job="run-one /usr/local/bin/oneill >> /var/log/oneill.log 2>&1"
