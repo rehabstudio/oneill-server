@@ -1,0 +1,4 @@
+# Docker Upstart and SysVinit configuration file
+
+# Use DOCKER_OPTS to modify the daemon startup options.
+DOCKER_OPTS="--bip=172.17.42.1/16 --dns=172.17.42.1 --dns=8.8.8.8 --dns=8.8.4.4"

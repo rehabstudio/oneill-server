@@ -17,3 +17,8 @@
     state: latest
     update_cache: yes
     cache_valid_time: 600
+
+- name: Upload /etc/default/docker
+  copy: src=defaults dest=/etc/default/docker mode=0644
+  notify:
+    - restart docker
