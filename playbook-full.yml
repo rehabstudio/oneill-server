@@ -1,10 +1,12 @@
 ---
 - name: "Install docker and oneill."
   hosts: oneill-server-host
-  remote_user: root
+  remote_user: ubuntu
+  sudo: yes
 
   roles:
     - docker
     - oneill
     - fluentd
     - security-updates
+    - system-updates

@@ -1,0 +1,8 @@
+---
+- name: "Update oneill and container definitions."
+  hosts: oneill-server-host
+  remote_user: ubuntu
+  sudo: yes
+
+  roles:
+    - oneill

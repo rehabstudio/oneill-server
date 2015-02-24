@@ -51,15 +51,27 @@ Once those files are in place the instance is ready to be provisioned. Ansible
 makes this really easy:
 
 ```bash
-$ ansible-playbook -i hosts site.yml
+$ ansible-playbook -i hosts playbook-full.yml
 ```
 
 And you should be up and running. `oneill` will now load the latest site
-definitions from the `/etc/oneill/definitions.yaml` file every 15 minutes. You
+definitions from the `/etc/oneill/definitions.yaml` file every 2 minutes. You
 can use some additional method (`git pull` executed via cron job is the
 simplest) to periodically update your site definitions from a central source.
 The default playbook simply uploads a static file into place which works for
 simple cases.
+
+
+## Updating definitions
+
+Whilst the full provisioning step above will update oneill's container
+definitions, you probably don't always want to run the full provisioning
+playbook. When all you want is to update oneill and the container definitions
+you can use:
+
+```bash
+$ ansible-playbook -i hosts playbook-quick.yml
+```
 
 
 ## Contributing
